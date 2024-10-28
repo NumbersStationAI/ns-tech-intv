@@ -14,7 +14,7 @@ export const addUser = (user: Omit<User, "id"> & { id?: number }) => {
 
 export const updateUser = (user: User) => {
   const existingIdx = users.findIndex((u) => u.id === user.id);
-  if (existingIdx > 0) users.splice(existingIdx, 1, user);
+  if (existingIdx >= 0) users.splice(existingIdx, 1, user);
 };
 
 export const users: User[] = [
